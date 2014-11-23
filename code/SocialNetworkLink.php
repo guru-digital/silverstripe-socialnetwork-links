@@ -2,14 +2,19 @@
 
 class SocialNetworkLink extends DataObject {
 
-    static $db      = array(
-        "Name"     => "Varchar",
-        "Text"     => "Varchar",
-        "CSSClass" => "Varchar",
-        "URL"      => "Varchar(500)"
+    static $db                     = array(
+        "Network"    => "enum('facebook, twitter, tumblr, youtube, digg, googleplus, linkedin, reddit, pinterest, stumbleupon, email')",
+        "Tagline"    => "Varchar",
+        "URL"        => "Varchar(500)",
+        "ExtraClass" => "Varchar",
     );
-    static $has_one = array(
+    static $has_one                = array(
         "Parent" => "SiteConfig"
+    );
+    private static $summary_fields = array(
+        'Network' => 'Netwrok',
+        'Tagline' => 'Tagline',
+        'URL'     => 'URL'
     );
 
     function getCMSFields() {
