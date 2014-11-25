@@ -18,7 +18,7 @@ class SiteConfig_SocialNetworkLinks extends DataExtension {
         );
 
         if (class_exists("GridFieldOrderableRows")) {
-            $config->addComponent(new GridFieldOrderableRows());
+            $config->addComponent(new GridFieldOrderableRows('SortOrder'));
         }
     }
 
