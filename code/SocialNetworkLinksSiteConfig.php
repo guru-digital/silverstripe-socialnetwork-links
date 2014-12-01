@@ -2,6 +2,9 @@
 
 class SiteConfig_SocialNetworkLinks extends DataExtension {
 
+    static $db                    = array(
+        "SharePagesOn" => "Varchar",
+    );
     static $many_many             = array(
         'SocialNetworkLinks' => 'SocialNetworkLink'
     );
@@ -20,6 +23,11 @@ class SiteConfig_SocialNetworkLinks extends DataExtension {
         if (class_exists("GridFieldOrderableRows")) {
             $config->addComponent(new GridFieldOrderableRows('SortOrder'));
         }
+        $fields->addFieldToTab('Root.SocialMedia', $sharePagesOnField = new CheckboxSetField("SharePagesOn", "Share pages with", SocialNetworkLink::create()->dbObject('Network')->enumValues()));
     }
+
+//    public function GetSharePagesOn() {
+//        return $this->owner->SharePagesOn ? explode(',', $this->owner->SharePagesOn) : false;
+//    }
 
 }
