@@ -6,6 +6,10 @@
         if (networks && networks.length) {
             $(this).share({"networks": networks.split(","), "orientation": "horizontal", "theme": "ss-theme"});
         }
+    }).find("a").each(function () {
+        var $iconWrap = $('<span class="fa-stack"><i class="fa icon fa-stack-2x"></i><i class="fa fa-share-alt-square fa-stack-1x fa-inverse"></i></span>')
+        $(this).append($iconWrap);
+//        $("<i class='fa fa-share-al'></i>").after(this);
     });
     socialLinks.bind('toggleShare', function () {
         var shareWrapperEl = $(this);

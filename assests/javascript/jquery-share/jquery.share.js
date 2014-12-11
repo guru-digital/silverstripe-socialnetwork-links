@@ -43,12 +43,14 @@
                     // append HTML for each network button
                     for (var item in networks) {
                         item = networks[item];
-                        href = helpers.networkDefs[item].url;
-                        href = href.replace('|u|',u).replace('|t|',t).replace('|d|',d)
-                                   .replace('|140|',t.substring(0,130));
-                        $("<a href='"+href+"' title='Share this page on "+item+
-                            "' class='pop share-"+theme+" share-"+theme+"-"+item+"'></a>")
-                            .appendTo($element);
+                        href =  helpers.networkDefs[item] && helpers.networkDefs[item].url;
+                        if (href){
+                            href = href.replace('|u|',u).replace('|t|',t).replace('|d|',d)
+                                       .replace('|140|',t.substring(0,130));
+                            $("<a href='"+href+"' title='Share this page on "+item+
+                                "' class='pop share-"+theme+" share-"+theme+"-"+item+"'></a>")
+                                .appendTo($element);
+                        }
                     }
                     
                     // customize css
