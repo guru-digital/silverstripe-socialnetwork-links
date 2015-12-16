@@ -3,7 +3,7 @@
 class SiteConfig_SocialNetworkLinks extends DataExtension {
 
     static $db                    = array(
-        "SharePagesOn" => "Varchar",
+        "SharePagesOn" => "Text",
     );
     static $many_many             = array(
         'SocialNetworkLinks' => 'SocialNetworkLink'
