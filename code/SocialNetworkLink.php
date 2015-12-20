@@ -1,14 +1,15 @@
 <?php
 
-class SocialNetworkLink extends DataObject {
+class SocialNetworkLink extends DataObject
+{
 
-    static $db                     = array(
+    public static $db                     = array(
         "Network"    => "enum('facebook, twitter, tumblr, youtube, digg, googleplus, linkedin, reddit, pinterest, stumbleupon, email, instagram, yelp')",
         "Tagline"    => "Varchar",
         "URL"        => "Varchar(500)",
         "ExtraClass" => "Varchar",
     );
-    static $has_one                = array(
+    public static $has_one                = array(
         "Parent" => "SiteConfig"
     );
     private static $summary_fields = array(
@@ -17,10 +18,10 @@ class SocialNetworkLink extends DataObject {
         'URL'     => 'URL'
     );
 
-    function getCMSFields() {
+    public function getCMSFields()
+    {
         $fields = parent::getCMSFields();
         $fields->removeByName("ParentID");
         return $fields;
     }
-
 }
