@@ -1,20 +1,22 @@
 <?php
 
-class SiteConfig_SocialNetworkLinks extends DataExtension {
+class SiteConfig_SocialNetworkLinks extends DataExtension
+{
 
-    static $db                    = array(
+    public static $db                    = array(
         "SharePagesOn" => "Text",
     );
-    static $many_many             = array(
+    public static $many_many             = array(
         'SocialNetworkLinks' => 'SocialNetworkLink'
     );
-    static $many_many_extraFields = array(
+    public static $many_many_extraFields = array(
         'SocialNetworkLinks' => array(
             'SortOrder' => 'Int'
         )
     );
 
-    function updateCMSFields(FieldList $fields) {
+    public function updateCMSFields(FieldList $fields)
+    {
         $fields->addFieldToTab("Root.SocialMedia", GridField::create(
                         "SocialNetworkLinks", "Social Network Links", $this->owner->SocialNetworkLinks(), $config = GridFieldConfig_RelationEditor::create()
                 )
@@ -29,5 +31,4 @@ class SiteConfig_SocialNetworkLinks extends DataExtension {
 //    public function GetSharePagesOn() {
 //        return $this->owner->SharePagesOn ? explode(',', $this->owner->SharePagesOn) : false;
 //    }
-
 }
