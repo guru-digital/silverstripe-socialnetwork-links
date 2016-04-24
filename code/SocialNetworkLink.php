@@ -13,7 +13,7 @@ class SocialNetworkLink extends DataObject
         "Parent" => "SiteConfig"
     );
     private static $summary_fields = array(
-        'Network' => 'Netwrok',
+        'Network' => 'Network',
         'Tagline' => 'Tagline',
         'URL'     => 'URL'
     );
