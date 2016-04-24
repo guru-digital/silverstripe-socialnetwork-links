@@ -1,0 +1,9 @@
+---
+Name: guru-socialnetwork-links
+After:
+  - 'framework/*'
+  - 'cms/*'
+---
+SiteConfig:
+  extensions:
+    - SiteConfig_SocialNetworkLinks
