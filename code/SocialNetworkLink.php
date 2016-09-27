@@ -4,7 +4,7 @@ class SocialNetworkLink extends DataObject
 {
 
     public static $db                     = array(
-        "Network"    => "enum('facebook, twitter, tumblr, youtube, digg, googleplus, linkedin, reddit, pinterest, stumbleupon, email, instagram, yelp')",
+        "Network"    => "enum('facebook, twitter, tumblr, youtube, digg, googleplus, linkedin, reddit, pinterest, snapchat, stumbleupon, email, instagram, yelp')",
         "Tagline"    => "Varchar",
         "URL"        => "Varchar(500)",
         "ExtraClass" => "Varchar",
